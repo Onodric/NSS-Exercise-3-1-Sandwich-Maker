@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I.I.F.E. Sandwich, PLLC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <header>
+      <h1>Sandwich Maker</h1>
+    </header>
+    <main>
+<!-- Create a sandwich order form that allows the user to select all the ingredients for a custom deli sandwich. Create a `Sandwich` module, then create the following as individual modules, using IIFE syntax, to augment `Sandwich`:   -->
+      <article>
+        Please choose your ingregients:
+        <section>
+<!-- + bread -->
+          <select name="bread" id="bread">
+
+          </select>
+<!-- + meat -->
+          <select name="meat" id="meat">
+            
+          </select>
+<!-- + cheese -->
+          <select name="cheese" id="cheese">
+            
+          </select>
+<!-- + condiments -->
+          <select name="condiments" id="condiments">
+            
+          </select>
+<!-- + veggies   -->
+          <select name="veggies" id="veggies">
+            
+          </select>
+        </section>
+      </article>
+
+    </main>
+    
+    <footer>&copy; 2016 Iffy Egg Salad Sandwich, Inc.</footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+Your project should have one HTML file that has:
+
+<!-- + a section of options for each sandwich part  -->
+<!-- + the ability to select multiple, or zero, choices for each section (such as turkey _and_ bacon, or "no meat")  -->
+<!-- + an empty DOM element into which the final sandwich order and its cost will be inserted   -->
+
+The ingredient choices should be stored as JS objects that contain the ingredients as keys and their cost as the value. `{"turkey": 0.90, "bacon": 1.50}` 
+
+Make sure the ingredient objects cannot be accessed by the other modules except through an accessor (getter) method.  
+
+Each IIFE should expose, in its public interface, a method named `add{ingredient}` (e.g. `addMeat` or `addVeggies`) that accepts a single argument. That argument's value should be the ingredient selected by the user.
+
+You should also create an additional JavaScript file that handles interacting with the form elements and determining which method should be called.
+
+Don't worry about exposing the prices to the user until you display the final cost. This is just an exercise, not a business model.
+
+Here's some simple boilerplate code to get you started.
