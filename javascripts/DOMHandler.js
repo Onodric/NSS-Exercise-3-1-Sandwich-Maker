@@ -63,4 +63,4 @@ condimentChooser.addEventListener("change", function(event) {
 
 document.getElementById("total").addEventListener("click", function(){
   document.getElementById("finalPrice").innerHTML = '$ ' + finalSandwichPrice.toFixed(2);
-};
+});
