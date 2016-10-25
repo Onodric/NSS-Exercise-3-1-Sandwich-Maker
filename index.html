@@ -9,61 +9,104 @@
     <link rel="author" href="humans.txt">
   </head>
   <body>
-    <header>
+    <header id="page-head">
       <h1>Sandwich Maker</h1>
     </header>
-    <main>
+    <main id="wrapper">
 <!-- Create a sandwich order form that allows the user to select all the ingredients for a custom deli sandwich. Create a `Sandwich` module, then create the following as individual modules, using IIFE syntax, to augment `Sandwich`:   -->
+<!-- + a section of options for each sandwich part  -->
+<!-- + the ability to select multiple, or zero, choices for each section (such as turkey _and_ bacon, or "no meat")  -->
       <article>
-        Please choose your ingregients:
+        <p>Please choose your ingredients:<br>
+        <em>Please choose one at the time for multiples of one category</em></p>
         <section>
 <!-- + bread -->
           <select name="bread" id="bread">
-
-          </select>
+            <option value="null" selected disabled>Breads</option>
+            <option value="Low-Carb">Low-Carb - $1.00</option>
+            <option value="Artisan Causasus">Artisan Causasus - $0.50</option>
+            <option value="Black Russion Spud">Black Russion Spud - $1.00</option>
+            <option value="French Baguette">French Baguette - $1.50</option>
+            <option value="Artisan 17-seed Whole Grain">Artisan 17-seed Whole Grain - $1.00</option>
+            <option value="Cheetos© Krusty Roll™">Cheetos&reg; Krusty Roll&#8482; - $1.50</option>
+          </select><br>
 <!-- + meat -->
           <select name="meat" id="meat">
-            
-          </select>
+            <option value="null" selected disabled>Meats</option>
+            <option value="Bacon">Bacon - $1.50</option>
+            <option value="Moar Bacon">Moar Bacon - $2.50</option>
+            <option value="Turkey">Turkey - $1.50</option>
+            <option value="Chicken">Chicken - $1.50</option>
+            <option value="Pastrami">Pastrami - $1.50</option>
+            <option value="Tofurkey">Tofurkey - $2.00</option>
+          </select><br>
 <!-- + cheese -->
           <select name="cheese" id="cheese">
-            
-          </select>
-<!-- + condiments -->
-          <select name="condiments" id="condiments">
-            
-          </select>
+            <option value="null" selected disabled>Cheeses</option>
+            <option value="Cheze">Cheze - $1.00</option>
+            <option value="Vegan">Vegan - $2.50</option>
+            <option value="Ah Mehr Ken">Ah Mehr Ken - $0.50</option>
+            <option value="Stinky Blue">Stinky Blue - $1.50</option>
+            <option value="Snooty Manchego">Snooty Manchego - $2.00</option>
+            <option value="Cheetos©">Cheetos© - $0.50</option>
+          </select><br>
 <!-- + veggies   -->
-          <select name="veggies" id="veggies">
+          <select name="veggie" id="veggie">
+            <option value="null" selected disabled>Veggies</option>
+            <option value="Onions">Onions - $0.25</option>
+            <option value="Green Peppers">Green Peppers - $0.50</option>
+            <option value="Spinach">Spinach - $0.50</option>
+            <option value="Lettuce">Lettuce - $0.50</option>
+            <option value="Olives">Olives - $1.00</option>
+            <option value="Tomatoes">Tomatoes - $1.50</option>
+          </select><br>
+<!-- + condiments -->
+          <select name="condiment" id="condiment">
+            <option value="null" selected disabled>Condiments</option>
+            <option value="Katsup">Katsup - $0.10</option>
+            <option value="Mustard">Mustard - $0.10</option>
+            <option value="Dijon">Dijon - $0.20</option>
+            <option value="Mayo">Mayonnaise - $0.50</option>
+            <option value="Relish">Relish - $0.20</option>
+            <option value="Oil and Vinegar">Oil and Vinegar - $0.10</option>
+            <option value="Spices">Spices - $0.20</option>
+          </select><br>
+        </section>
+      </article>
+
+      <article>
+        <section class="sandwich-parts">
+          <ul id="putPartsHere">
             
-          </select>
+          </ul>
+        </section>
+        <section>
+          <button id="total">Total</button>
+          <h2>Final Price: <span id="finalPrice"></span></h2>
         </section>
       </article>
 
     </main>
     
-    <footer>&copy; 2016 Iffy Egg Salad Sandwich, Inc.</footer>
-    <script src="js/main.js"></script>
+    <footer id="page-foot">&copy; 2016 Iffy Egg Salad Sandwich, Inc.</footer>
+    <script src="javascripts/sandwichMaker.js"></script>
+    <script src="javascripts/meat.js"></script>
+    <script src="javascripts/bread.js"></script>
+    <script src="javascripts/cheese.js"></script>
+    <script src="javascripts/condiments.js"></script>
+    <script src="javascripts/veggies.js"></script>
+    <script src="javascripts/DOMHandler.js"></script>
+    <!-- <script src="javascripts/main.js"></script> -->
   </body>
 </html>
 
 
 
 
-Your project should have one HTML file that has:
+<!-- Your project should have one HTML file that has: -->
 
-<!-- + a section of options for each sandwich part  -->
-<!-- + the ability to select multiple, or zero, choices for each section (such as turkey _and_ bacon, or "no meat")  -->
 <!-- + an empty DOM element into which the final sandwich order and its cost will be inserted   -->
 
-The ingredient choices should be stored as JS objects that contain the ingredients as keys and their cost as the value. `{"turkey": 0.90, "bacon": 1.50}` 
 
-Make sure the ingredient objects cannot be accessed by the other modules except through an accessor (getter) method.  
 
-Each IIFE should expose, in its public interface, a method named `add{ingredient}` (e.g. `addMeat` or `addVeggies`) that accepts a single argument. That argument's value should be the ingredient selected by the user.
 
-You should also create an additional JavaScript file that handles interacting with the form elements and determining which method should be called.
-
-Don't worry about exposing the prices to the user until you display the final cost. This is just an exercise, not a business model.
-
-Here's some simple boilerplate code to get you started.
