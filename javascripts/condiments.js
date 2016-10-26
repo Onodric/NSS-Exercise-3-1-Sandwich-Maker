@@ -1,4 +1,5 @@
 "use strict";
+/*jshint -W079 */
 var SandwichMaker = (function(maker){
   var condimentPrice = {
     "Katsup": 0.10,
@@ -12,5 +13,8 @@ var SandwichMaker = (function(maker){
   maker.addCondiment = function(condiment){
     return condimentPrice[condiment];
   };
+  maker.getCondiments = function(){
+      return condimentPrice;
+  };
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});
