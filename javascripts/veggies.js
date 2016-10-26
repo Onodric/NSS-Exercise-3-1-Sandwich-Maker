@@ -1,4 +1,5 @@
 "use strict";
+/*jshint -W079 */
 var SandwichMaker = (function(maker){
   var veggiePrice = {
     "Onions": 0.25,
@@ -11,5 +12,9 @@ var SandwichMaker = (function(maker){
   maker.addVeggie = function(veggie){
       return veggiePrice[veggie];
   };
+  maker.getVeggies = function(){
+      return veggiePrice;
+    };
+
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});

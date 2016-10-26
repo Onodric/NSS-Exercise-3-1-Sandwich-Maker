@@ -1,4 +1,5 @@
 "use strict";
+/*jshint -W079 */
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(maker) {
 // Private variable to store the different meat prices
@@ -15,7 +16,10 @@ var SandwichMaker = (function(maker) {
   maker.addMeat = function(meat){
     return meatPrice[meat];
   };
+  maker.getMeats = function(){
+      return meatPrice;
+    };
 
 // Return the new, augmented object with the new method on it
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});

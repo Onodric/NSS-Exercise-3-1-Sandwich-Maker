@@ -1,4 +1,5 @@
 "use strict";
+/*jshint -W079 */
 var SandwichMaker = (function(maker){
   var breadPrice = {
     "Low-Carb": 1.00,
@@ -12,6 +13,9 @@ var SandwichMaker = (function(maker){
     maker.addBread = function(bread){
       return breadPrice[bread];
     };
+    maker.getBreads = function(){
+      return breadPrice;
+    };
   
   return maker;
-})(SandwichMaker);
+})(SandwichMaker || {});
